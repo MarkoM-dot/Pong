@@ -1,0 +1,37 @@
+using UnityEngine;
+
+public class ComputerPaddle : Paddle
+{
+    // This script will contain features specific to the computer
+
+    // The computer will track the movement of the ball and move accordingly
+    public Rigidbody2D ball;
+
+    private void FixedUpdate()
+    {
+        // When the ball moves toward the computer adjust vertical position
+        if (this.ball.velocity.x > 0.0f)
+        {
+            if (this.ball.position.y > this.transform.position.y)
+            {
+                _rigidbody.AddForce(Vector2.up * this.speed);
+            }
+            else if (this.ball.position.y < this.transform.position.y)
+            {
+                _rigidbody.AddForce(Vector2.down * this.speed);
+            }
+        }
+        // When the ball moves away from the computer it centers itself
+        else
+        {
+            if (this.transform.position.y > 0.0f)
+            {
+                _rigidbody.AddForce(Vector2.down * this.speed);
+            }
+            else if (this.transform.position.y < 0.0f)
+            {
+                _rigidbody.AddForce(Vector2.up * this.speed);
+            }
+        }
+    }
+}
