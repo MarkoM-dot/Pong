@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
     public Paddle computerPaddle;
     public Text playerScoreText;
     public Text computerScoreText;
-    private int _playerScore;
-    private int _computerScore;
+    int _playerScore;
+    int _computerScore;
 
 
     public void PlayerScores()
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
         RoundReset();
     }
-    private void RoundReset()
+    public void RoundReset()
     {
         this.playerPaddle.ResetPosition();
         this.computerPaddle.ResetPosition();

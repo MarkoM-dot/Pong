@@ -2,18 +2,14 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    [SerializeField] float speed = 200f;
+    [SerializeField] float speed = 210f;
     private Rigidbody2D _rigidbody;
 
-    private void Awake()
+    void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
     }
-    private void Start()
-    {
-        ResetPosition();
-    }
-    private void AddStartingForce()
+    void AddStartingForce()
     {
         float x = Random.value < 0.5f ? -1.0f : 1.0f;
         float y = Random.value < 0.5f ? Random.Range(-1.0f, -0.5f) : Random.Range(0.5f, 1.0f);
