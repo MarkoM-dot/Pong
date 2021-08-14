@@ -5,8 +5,9 @@ public class PlayerPaddle : Paddle
     // This script will contain features specific to the Player
     private Vector2 _direction;
 
-    private void Update()
+    void Update()
     {
+        
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             _direction = Vector2.up;
@@ -19,8 +20,9 @@ public class PlayerPaddle : Paddle
         {
             _direction = Vector2.zero;
         }
+        
     }
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         if (_direction.sqrMagnitude != 0)
         {

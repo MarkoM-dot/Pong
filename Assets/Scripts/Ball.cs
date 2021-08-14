@@ -2,12 +2,24 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    [SerializeField] float speed = 210f;
+    [SerializeField] float speed = 1f;
     private Rigidbody2D _rigidbody;
 
     void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+    }
+    void FixedUpdate()
+    {
+        // When the ball hits the top of the rectangle (player or computer)  
+        if (_rigidbody.velocity.x < 4 && _rigidbody.velocity.x > -4 && _rigidbody.velocity.x != 0)
+        {
+            Debug.Log(_rigidbody.velocity.x.ToString());
+            //if (_rigidbody.velocity.x > 0)
+            //{
+                
+            //}
+        }
     }
     void AddStartingForce()
     {
@@ -23,9 +35,12 @@ public class Ball : MonoBehaviour
     }
     public void ResetPosition()
     {
+        CenterBall();
+        AddStartingForce();
+    }
+    public void CenterBall()
+    {
         _rigidbody.position = Vector3.zero;
         _rigidbody.velocity = Vector3.zero;
-
-        AddStartingForce();
     }
 }

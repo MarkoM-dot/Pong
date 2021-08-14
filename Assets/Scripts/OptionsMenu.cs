@@ -5,8 +5,12 @@ using UnityEngine;
 public class OptionsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
-    public void SetVolume(float volume)
+    public void SetVolumeMusic(float volume)
     {
-        audioMixer.SetFloat("Volume", volume);
+        audioMixer.SetFloat("MusicVolume", volume);
+    }
+    public void SetVolumeSoundFX(float volume)
+    {
+        audioMixer.SetFloat("SoundFXVolume", volume);
     }
 }

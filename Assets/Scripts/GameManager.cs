@@ -1,13 +1,16 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public Ball ball;
     public Paddle playerPaddle;
     public Paddle computerPaddle;
-    public Text playerScoreText;
-    public Text computerScoreText;
+    public TextMeshProUGUI playerScoreText;
+    public TextMeshProUGUI computerScoreText;
+    public TextMeshProUGUI winnerText;
+    public GameObject endGame;
     int _playerScore;
     int _computerScore;
 
@@ -17,19 +20,37 @@ public class GameManager : MonoBehaviour
         _playerScore++;
         this.playerScoreText.text = _playerScore.ToString();
 
-        RoundReset();
+        if (_playerScore >= 5)
+        {
+            endGame.SetActive(true);
+            winnerText.text = "PLAYER WINS";
+            ball.CenterBall();
+        }
+        else 
+        {
+            RoundReset();
+        }
     }
     public void ComputerScores()
     {
         _computerScore++;
         this.computerScoreText.text = _computerScore.ToString();
 
-        RoundReset();
+        if (_computerScore >= 5)
+        {
+            endGame.SetActive(true);
+            winnerText.text = "COMPUTER WINS";
+            ball.CenterBall();
+        }
+        else
+        {
+            RoundReset();
+        }
     }
     public void RoundReset()
     {
-        this.playerPaddle.ResetPosition();
-        this.computerPaddle.ResetPosition();
-        this.ball.ResetPosition();
+        playerPaddle.ResetPosition();
+        computerPaddle.ResetPosition();
+        ball.ResetPosition();
     }
 }

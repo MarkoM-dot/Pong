@@ -6,15 +6,16 @@ public class BounceSound : MonoBehaviour
     {
         Ball ball = collision.gameObject.GetComponent<Ball>();
         AudioSource audioSource = GetComponent<AudioSource>();
+        float impact = collision.relativeVelocity.magnitude;
         
         if (ball != null)
         {
-            if (collision.relativeVelocity.magnitude > 13)
+            if (impact > 13)
             {
                 audioSource.volume = 1f;
                 audioSource.Play();
             }
-            else if (collision.relativeVelocity.magnitude > 8 && collision.relativeVelocity.magnitude <= 13)
+            else if (impact > 8 && impact <= 13)
             {
                 audioSource.volume = 0.75f;
                 audioSource.Play();
