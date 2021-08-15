@@ -4,10 +4,17 @@ public class PlayerPaddle : Paddle
 {
     // This script will contain features specific to the Player
     // Make the Kinematic object move in the fixed update
-    private void FixedUpdate()
+    void Update()
     {
-        float y = Input.GetAxisRaw("Vertical");
-
-        transform.Translate(0, y * Time.deltaTime * speed, 0);
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+        {
+            GoingUp();
+        }
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        {
+            GoingDown();
+        }
+        
+        CheckForbiddenZone();
     }
 }

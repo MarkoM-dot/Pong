@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
         _playerScore++;
         this.playerScoreText.text = _playerScore.ToString();
 
-        if (_playerScore >= 5)
+        if (_playerScore >= 5 && _playerScore - _computerScore > 1)
         {
             endGame.SetActive(true);
             winnerText.text = "PLAYER WINS";
@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
         _computerScore++;
         this.computerScoreText.text = _computerScore.ToString();
 
-        if (_computerScore >= 5)
+        if (_computerScore >= 5 && _computerScore - _playerScore > 1)
         {
             endGame.SetActive(true);
             winnerText.text = "COMPUTER WINS";

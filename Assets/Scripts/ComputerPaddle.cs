@@ -6,31 +6,32 @@ public class ComputerPaddle : Paddle
 
     // The computer will track the movement of the ball and move accordingly
     public Rigidbody2D ball;
+    
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         // When the ball moves toward the computer adjust vertical position
-        if (this.ball.velocity.x > 0.0f)
+        if (ball.velocity.x > 0.0f)
         {
-            if (this.ball.position.y > this.transform.position.y)
+            if (ball.position.y > transform.position.y + 0.2f)
             {
-                _rigidbody.AddForce(Vector2.up * this.speed);
+                GoingUp();
             }
-            else if (this.ball.position.y < this.transform.position.y)
+            else if (ball.position.y < transform.position.y - 0.2f)
             {
-                _rigidbody.AddForce(Vector2.down * this.speed);
+                GoingDown();
             }
         }
         // When the ball moves away from the computer it centers itself
         else
         {
-            if (this.transform.position.y > 0.0f)
+            if (transform.position.y > 0.25)
             {
-                _rigidbody.AddForce(Vector2.down * this.speed);
+                GoingDown();
             }
-            else if (this.transform.position.y < 0.0f)
+            else if (transform.position.y < -0.25)
             {
-                _rigidbody.AddForce(Vector2.up * this.speed);
+                GoingUp();
             }
         }
     }

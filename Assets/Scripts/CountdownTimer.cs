@@ -9,7 +9,7 @@ public class CountdownTimer : MonoBehaviour
     [SerializeField] int countdownTime = 5;
     [SerializeField] TextMeshProUGUI countdownDisplay;
 
-    private void Start()
+    void Start()
     {
         StartCoroutine(CountdownToStart());
     }

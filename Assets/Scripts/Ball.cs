@@ -9,18 +9,6 @@ public class Ball : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
     }
-    void FixedUpdate()
-    {
-        // When the ball hits the top of the rectangle (player or computer)  
-        if (_rigidbody.velocity.x < 4 && _rigidbody.velocity.x > -4 && _rigidbody.velocity.x != 0)
-        {
-            Debug.Log(_rigidbody.velocity.x.ToString());
-            //if (_rigidbody.velocity.x > 0)
-            //{
-                
-            //}
-        }
-    }
     void AddStartingForce()
     {
         float x = Random.value < 0.5f ? -1.0f : 1.0f;
