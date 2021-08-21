@@ -25,11 +25,11 @@ public class ComputerPaddle : Paddle
         // When the ball moves away from the computer it centers itself
         else
         {
-            if (transform.position.y > 0.25)
+            if (transform.position.y > 0.3)
             {
                 GoingDown();
             }
-            else if (transform.position.y < -0.25)
+            else if (transform.position.y < -0.3)
             {
                 GoingUp();
             }

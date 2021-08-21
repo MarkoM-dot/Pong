@@ -5,7 +5,7 @@ public class Paddle : MonoBehaviour
     // This script will contain common features both paddles have
     public float topScreenEdge = 4.2f;
     public float bottomScreenEdge = -4.2f;
-    public float speed = 8.0f;
+    protected float speed = 7.0f;
     protected Rigidbody2D _rigidbody;
 
 
