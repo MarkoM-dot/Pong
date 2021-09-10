@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using GoogleMobileAds.Api;
 
 public class InitAd : MonoBehaviour
@@ -9,7 +10,7 @@ public class InitAd : MonoBehaviour
 
     private void Start()
     {
-        ShowInterstitial();
+        StartCoroutine(ShowInterstitial());
     }
 
     private void RequestInterstitial()
@@ -21,13 +22,16 @@ public class InitAd : MonoBehaviour
         this.InterstitialAd.LoadAd(request);
     }
 
-    private void ShowInterstitial()
+    IEnumerator ShowInterstitial()
     {
         RequestInterstitial();
-        if (this.InterstitialAd.IsLoaded())
+
+        while (!InterstitialAd.IsLoaded())
         {
-            this.InterstitialAd.Show();
+            yield return null;
         }
+
+        this.InterstitialAd.Show();
     }
     public void DestroyInterstitialAd()
     {
