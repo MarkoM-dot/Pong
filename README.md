@@ -1,7 +1,6 @@
-# Welcome to the Intergalactic Pong Tournament!
+# Welcome to the Intergalactic Pong Repo Page!
 
-A pong tournament to be played on Android devices. All screenshots below were taken on my device running Android 10 where extensive testing was done and I also 
-tested the program on Android 9.
+A pong tournament to be played on Android devices. All screenshots below were taken various Android devices.
 
 This game is made with Unity and programmed in C#. 
 
@@ -13,7 +12,7 @@ An options menu to adjust the music and sound effects volume.
 
 ![Screenshot_20210830-130622](https://user-images.githubusercontent.com/83985775/131332154-671491c3-1c8a-4341-ac39-ff11eca82df0.png)
 
-Before entering the tournament, players can choose their preferred paddle and their options will be saved on their device.
+Before entering the challenges, players can choose their preferred paddle and their options will be saved on their device.
 
 ![Screenshot_20210830-130636](https://user-images.githubusercontent.com/83985775/131332156-5be95340-98e0-4c17-bf91-47a13b8b8488.png)
 
