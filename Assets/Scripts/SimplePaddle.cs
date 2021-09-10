@@ -13,14 +13,6 @@ public class SimplePaddle : Paddle
                 transform.position = new Vector2(transform.position.x, transform.position.y + touch.deltaPosition.y * speedModifier);
             }
         }
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
-        {
-            GoingUp();
-        }
-        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-        {
-            GoingDown();
-        }
 
         CheckForbiddenZone();
     }

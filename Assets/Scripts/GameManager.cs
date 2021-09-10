@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,7 +10,11 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI playerScoreText;
     public TextMeshProUGUI computerScoreText;
     public TextMeshProUGUI winnerText;
-    public GameObject endGame;
+    public TextMeshProUGUI loserText;
+    public GameObject endGameWon;
+    public GameObject endGameLost;
+    public string nextLevel = "Level2";
+    public int levelToUnlock = 2;
     int _playerScore;
     int _computerScore;
 
@@ -22,9 +26,10 @@ public class GameManager : MonoBehaviour
 
         if (_playerScore >= 5 && _playerScore - _computerScore > 1)
         {
-            endGame.SetActive(true);
+            endGameWon.SetActive(true);
             winnerText.text = "PLAYER WINS";
             ball.CenterBall();
+            LevelWon();
         }
         else 
         {
@@ -38,8 +43,8 @@ public class GameManager : MonoBehaviour
 
         if (_computerScore >= 5 && _computerScore - _playerScore > 1)
         {
-            endGame.SetActive(true);
-            winnerText.text = "COMPUTER WINS";
+            endGameLost.SetActive(true);
+            loserText.text = "COMPUTER WINS";
             ball.CenterBall();
         }
         else
@@ -52,5 +57,13 @@ public class GameManager : MonoBehaviour
         playerPaddle.ResetPosition();
         computerPaddle.ResetPosition();
         ball.ResetPosition();
+    }
+    public void LevelWon()
+    {
+        PlayerPrefs.SetInt("levelReached", levelToUnlock);
+    }
+    public void BackToChallenge()
+    {
+        SceneManager.LoadScene(3);
     }
 }

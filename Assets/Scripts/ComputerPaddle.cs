@@ -6,7 +6,6 @@ public class ComputerPaddle : Paddle
 
     // The computer will track the movement of the ball and move accordingly
     public Rigidbody2D ball;
-    
 
     void FixedUpdate()
     {

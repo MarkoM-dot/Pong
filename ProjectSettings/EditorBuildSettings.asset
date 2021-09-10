@@ -12,6 +12,27 @@ EditorBuildSettings:
     path: Assets/Scenes/Game.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/TournamentRound.unity
+    path: Assets/Scenes/Credits.unity
+    guid: f58abad5008f91348ac694761d774810
+  - enabled: 1
+    path: Assets/Scenes/ChallengeScene.unity
+    guid: 6fba3371a8074bd49986bc81386ed9d8
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 731b3f91e17beec48864de8044d61d54
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
     guid: 1eaf39a5d7668a541b6071998fecd8c5
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 1a85bf7154f6d714996d46660bd27d52
+  - enabled: 1
+    path: Assets/Scenes/Level4.unity
+    guid: 09512a0d2d228174698d6d49ac523349
+  - enabled: 1
+    path: Assets/Scenes/Level5.unity
+    guid: 1691b6b8100f9ee49905e041b21f5c2d
+  - enabled: 1
+    path: Assets/Scenes/Level6.unity
+    guid: 96a415b3d58678941a7d4b17519bc04a
   m_configObjects: {}

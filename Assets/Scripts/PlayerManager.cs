@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
@@ -57,8 +56,8 @@ public class PlayerManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("selectedOption", selectedOption);
     }
-    public void EnterTournament() 
+    public void EnterChallenge() 
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 }

@@ -7,11 +7,14 @@ TagManager:
   - Computer
   - Walls
   - Ball
+  - MenuMusic
+  - GameMusic
+  - MusicManager
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Advertisment
   - Water
   - UI
   - 
@@ -49,4 +52,7 @@ TagManager:
     locked: 0
   - name: New Layer
     uniqueID: 2753087081
+    locked: 0
+  - name: Advertisment
+    uniqueID: 2815863041
     locked: 0
