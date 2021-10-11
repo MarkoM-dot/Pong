@@ -1,6 +1,9 @@
 # Welcome to the Intergalactic Pong Repo Page!
 
 A pong tournament to be played on Android devices. All screenshots below were taken various Android devices.
+Get it now!
+
+https://play.google.com/store/apps/details?id=com.MarkoMdot.IntergalacticPong
 
 This game is made with Unity and programmed in C#. 
 
